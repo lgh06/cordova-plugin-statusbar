@@ -123,7 +123,9 @@ public class StatusBar extends CordovaPlugin {
             case ACTION_HIDE:
                 activity.runOnUiThread(() -> {
                     int uiOptions = window.getDecorView().getSystemUiVisibility()
-                        | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        // | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                        | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                        | View.SYSTEM_UI_FLAG_IMMERSIVE
                         | View.SYSTEM_UI_FLAG_FULLSCREEN;
 
                     window.getDecorView().setSystemUiVisibility(uiOptions);
